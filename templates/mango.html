@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mango</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="..\static\css\style.css">
+</head>
+
+<body>
+    {% include 'template.html' %}
+
+    
+
+    <section class="cat">
+        <div class="agriculterdetail">
+            <div class="heading">CROP GUIDE</div>
+            <div class="agricontainer ">
+                <div class="planteimg ">
+                    <img src="..\static\images\mango.jpg" alt="">
+                </div>
+                <div class="plantdata">
+                    <div class="cropname">mango</div>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\weather (1).png" alt="">
+                            <div class="date">MANGO/ June-JUly</div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\seeding.png" alt="">
+                            <div class="date">type of varieties</div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\fertilizepro.png" alt="">
+                            <div class="date">chemical fertilizer</div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\pesticide.png" alt="">
+                            <div class="date">type of pests diseases</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">GENERAL INFORMATION</div>
+                <p class="generalpara">It is known as the king of fruits and cultivated in India from old times. Mango
+                    is a rich source of Vitamin A and C; its leaves are used as fodder in case of shortage of fodder
+                    while wood is used for furniture making. Unripe fruits are used for chutney, pickles and ripe fruits
+                    are used for eating purposes as well as for syrups, jam and jelly. It is commercially cultivated in
+                    Andhra Pradesh, Karnataka, West Bengal, Kerala, Bihar, UP, Uttarakhand, Punjab, Haryana,
+                    Maharashtra, Gujarat.
+                </p>
+            </div>
+            
+            <div class="generalinfo setinfo" style="background: none;">
+                <div class="heading">CLIMATE</div>
+                <div class="carsection">
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+                        <div class="boxconent">TEMPERATURE </div>
+                        <div class="boxconent">17°C-25°C</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\rainy.png" alt="" /></div>
+                        <div class="boxconent">RAINFALL</div>
+                        <div class="boxconent">90cm-120cm
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\chemical-free.png" alt="" /></div>
+                        <div class="boxconent">SOWING TEMPERATURE </div>
+                        <div class="boxconent">24°C-27°C </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+                        <div class="boxconent">HARVESTING TEMPERATURE</div>
+                        <div class="boxconent">17°C-25°C</div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="generalinfo">
+                <div class="heading">SOIL</div>
+                <p class="generalpara">It can be grown on a variety of soil. Deep soil without any hard pan upto depth
+                    of 4feet is required for mango cultivation. pH of soil should be less than 8.5%.
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">POPULAR VARIETIES WITH THEIR YIELD</div>
+                <p class="generalpara"><b>Dasheri:</b> It is widely grown in a region. Fruits are ready to harvest in the first
+                    week of July. Fruits are small to medium size, smooth having yellow color, sweet in test and stone
+                    is of small size. Fruits are having better keeping quality. It is a regular bearing crop. It gives
+                    an average yield of 150kg of fruits per tree.
+                </p>
+                <p class="generalpara"><b>Langra:</b> Fruits are medium to large, smooth and have a lemon yellow color. Flesh
+                    is fibreless with fine test. Skin of the fruit is medium thick. Fruits are ready to harvest in the
+                    second week of July. It gives an average yield of 100kg per plant.
+                </p>
+                <div id="hidcontent">
+                    <p class="generalpara"><b>Alphonso:</b> Having great export potential. Fruits are of medium and oval size. Fruits are greenish
+                        light yellow with light pinkish blush. Flesh is fibre free with superb test. Skin of the fruit
+                        is thin and smooth. Fruits mature in the first week of July.
+                    </p>
+                    <p class="generalpara"><b>Gangian Sandhuri (GN-19):</b> The variety matures in fourth week of July. It contains 15.7% sugar
+                        and 0.30% sour content. It gives an average yield of 80kg per tree.
+                    </p>
+                    <p class="generalpara">
+                        Other States Variety
+                    </p>
+                    <p class="generalpara">
+                        <b>Hybrids:</b> Mallika, Amrapali, Ratna, Arka Arjun, Arka Puneet, Arka Anmol, Sindhu, Manjeera
+                    </p>
+                    <p class="generalpara">
+                        <b>Varieties:</b> Alphonso, Bombay Green, Dashahari, Himsagar, Kesar, Neelum, Chausa.
+                    </p>
+                </div>
+                <div class="btncenter"><button class="generalinfobtn" onclick="myFunction3()">+ Show More</button></div>
+            </div>
+
+
+            <div class="generalinfo">
+                <div class="heading">LAND PREPARATION</div>
+                <p class="generalpara">Do ploughing, cross ploughing of land and then levelled the land. Prepare land in such a way that water stagnation should not occur in the field. After leveling, take one deeper ploughing and then divide lands in blocks. Spacing is varied from place to place.
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">SOWING</div>
+                <p class="generalpara">Time of sowing
+                    Planting is done in the months of August-September and also in February - March. Do planting in cool hours of evening. Protect crops from high wind.                     
+                </p>
+                <p class="generalpara">Spacing
+                    For grafted varieties use a distance of 9m x 9m and plant them in a square system.                    
+                </p>
+                <p class="generalpara">Sowing Depth
+                    Dug pits of 1x1x1m size at a distance of 9x9m one month earlier before planting. Expose them to the sun. Fill with a mixture of soil, 30 to 40 kg of FYM or Compost and 1 kg single super phosphate.                    
+                </p>
+                <p class="generalpara">Method of sowing
+                    Square and hexagonal planting can be adopted. Hexagonal planting accommodates 15% more plants.                    
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">SEED</div>
+                <p class="generalpara">Seed Treatment
+                    Before planting, dip stones in a solution of Dimethoate for a few minutes. It will protect crops from mango weevils. Seed treatment with Captan fungicide protects seeds from fungal infections.                    
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">INTERCROPS</div>
+                <p class="generalpara">After planting remove inflorescence for better vegetative growth upto four years and at age of five, keep inflorescence for fruit formation. During this period, intercrop can be taken as it helps to give additional income and also it helps to reduce weed growth. Onion, tomato, Radish, Beans, Cabbage, Cauliflower, Moong, gram, Lentil, Peach, Plum and Papaya etc. crops can be taken as intercrop.
+
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">WEED CONTROL</div>
+                <p class="generalpara">Weeding and earthing should be done around newly planted crops. Intercrop can be taken till plant gets well acquainted to surrounding atmosphere upto plant start bearing. Depending upon variety it will take 5-6years. Intercropping helps to minimize weed control. Leguminous crops like moong, mash, gram and Lentil can be taken as intercrop. Also crops like onion, tomato, Radish, beans, cauliflower, and cabbage are useful for intercropping. Avoid Bajra, maize and sugarcane as intercropped.
+                </p>
+            </div>
+            <div class="generalinfo">
+                <div class="heading">IRRIGATION</div>
+                <p class="generalpara">Amount and interval of irrigation depend upon, type of soil, climate and source of irrigation. To young plants apply light and frequent irrigation. Light irrigation always gives best results as compared to flood irrigation. In summer apply irrigation at intervals of 5-7days whereas in winter slowly increased irrigation interval to 25-30days. In the rainy season, apply irrigation depending upon rainfall intensity. Bearing trees required irrigation during the fruit development period at intervals of 10-12days. After fertilizer application in February month, give light irrigation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery library -->
+    <script>
+        function myFunction3() {
+            var x = document.getElementById("hidcontent");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    {% include 'template2.html' %}
+</body>
+
+<!-- <form class="form-inline my-2 my-lg-0" id="vendearch">
+  <div class="content" id="mysearch">
+    <input type="text" class="field" placeholder="Enter Keyword">
+   <a href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+    </div>
+</form> -->
+
+</html>

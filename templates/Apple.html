@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmEasy</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='./css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='./css/font-awesome.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="..\static\css\style2.css">
+</head>
+
+<body>
+  <!-- banner -->
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+	<div class="slideshow-container">
+				<div class="banner-top">
+					<nav class="navbar navbar-expand-lg " style="background-color: beige;">
+            <div class="container">
+        <a class="logo" href="http://127.0.0.1:5000/" style="color:black;">FarmEasy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+								aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						  <div class="collapse navbar-collapse" id="navbarResponsive">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item active">
+                <a class="nav-link activate" href="http://127.0.0.1:5000/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/Weather">Weather</a>
+            </li>
+            <li class="nav-item">
+
+          <a class="nav-link" href="http://127.0.0.1:5000/Govermentskim">Government Schemes </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Crop Guide </a>
+          <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-ite"> <nav class="navbar navbar-expand-md navbarset navbar-dark bg-dark">
+        <li><a class="dropdown-item settheme" href="#"> Cereals &raquo </a>
+            <ul class="submenu dropdown-menu bg-dark">
+              <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Maize"> Maize</a></li>
+              <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Cotton"> Cotton </a></li>
+              <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Jute"> Jute </a></li>
+              <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Coffee"> Coffee </a></li>
+              <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Coconut">Coconut</a></li>
+              </ul>
+              </li>
+            
+            <li><a class="dropdown-item settheme" href="#"> Pulse &raquo </a>
+          <ul class="submenu dropdown-menu bg-dark">
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Kidneybeans"> Kidneybeans </a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Lentil"> Lentil</a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Blackgram"> Blackgram </a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Pigeonpeas"> Pigeonpeas</a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Blackgram"> Blackgram </a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Mothbeans"> Mothbeans </a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Mungbean"> Greengram</a></li>
+            <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Chickpea"> Chickpea </a></li>
+          </ul>
+           
+            <li><a class="dropdown-item settheme" href="#"> Fruits &raquo </a>
+              <ul class="submenu dropdown-menu bg-dark">
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Mango"> Mango </a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Grapes"> Grapes</a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Banana"> Banana </a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Apple"> Apple</a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Pomegranate"> Pomegranate </a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Orange"> Orange </a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Watermelon"> Watermeleon</a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Muskmelon"> Muskmeleon </a></li>
+                <li><a class="dropdown-item settheme" href="http://127.0.0.1:5000/Papaya"> Papaya </a></li>
+          </ul>
+         </li>
+         </ul>
+       <li class="nav-item">
+         <a class="nav-link" href="http://127.0.0.1:5000/Recommendation">Crop Recommendation</a>
+       </li>
+        </ul>
+       </div>
+  </nav>
+
+<body>
+  <section class="cat">
+    <div class="agriculterdetail">
+      <div class="heading">CROP GUIDE</div>
+      <div class="agricontainer ">
+        <div class="planteimg ">
+          <img src="..\static\images\apple.jpg" alt="">
+        </div>
+        <div class="plantdata">
+          <div class="cropname">apple</div>
+          <a href="#" class="anchor">
+            <div class="whether">
+              <img src="..\static\images\weather (1).png" alt="">
+              <div class="date">SEPTEMBER-OCTOBER</div>
+            </div>
+          </a>
+          <a href="#" class="anchor">
+            <div class="whether">
+              <img src="..\static\images\seeding.png" alt="">
+              <div class="date">type of varieties</div>
+            </div>
+          </a>
+          <a href="#" class="anchor">
+            <div class="whether">
+              <img src="..\static\images\fertilizepro.png" alt="">
+              <div class="date">chemical fertilizer</div>
+            </div>
+          </a>
+          <a href="#" class="anchor">
+            <div class="whether">
+              <img src="..\static\images\pesticide.png" alt="">
+              <div class="date">type of pests diseases</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">GENERAL INFORMATION</div>
+        <p class="generalpara">"The apple is a hardy, deciduous woody perennial tree that grows in all temperate zones. Apples grow best where there is cold in winter, moderate summer temperatures, and medium to high humidity.
+            There are apples for fresh eating, some for cooking, and some for preserving. Some apples are sweet and some are tart. Some apples come to harvest in summer, some in autumn."</p>
+      </div>
+
+      <div class="generalinfo setinfo" style="background: none;">
+        <div class="heading">CLIMATE</div>
+        <div class="carsection">
+          <div class="box">
+            <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+            <div class="boxconent">Temperature</div>
+            <div class="boxconent">21°C-24°C</div>
+          </div>
+
+          <div class="box">
+            <div class="boximg"><img src="..\static\images\rainy.png" alt="" /></div>
+            <div class="boxconent">Rainfall</div>
+            <div class="boxconent">100cm-125cm </div>
+          </div>
+
+          <div class="box">
+            <div class="boximg"><img src="..\static\images\chemical-free.png" alt="" /></div>
+            <div class="boxconent">Sowing Temperature</div>
+            <div class="boxconent">21°C-24°C</div>
+          </div>
+
+          <div class="box">
+            <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+            <div class="boxconent">Harvesting Temperature</div>
+            <div class="boxconent">20°C-23°C
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">SOIL</div>
+        <p class="generalpara">Apples grow best on well-drained, loam soils having a depth of 45 cm and a pH range of pH 5.5-6.5. The soil should be free from hard substrata and water-logged conditions. Soils with heavy clay or compact subsoil are to be avoided.</p>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">POPULAR VARIETIES WITH THEIR YIELD</div>
+        <p class="generalpara"><b>1.Jammu and Kashmir=</b>Golden Delicious (Late Season), Lal Ambri, Mollies Delicious, Starkrimson, Red June, Irish Peach, Benoni and Tydeman’s Early.</p>
+        <p class="generalpara"><b>2.Himachal Pradesh=</b>Golden Delicious (Late Season), Red Delicious (Mid season), McIntosh Uttarakhand.
+            <br><br>
+          <b>3.Uttar Pradesh=</b> McIntosh, Chaubattia Anupam
+            <br><br>
+          <b>4.Tamil Nadu=</b> Irish Peach and Zouches Pipin (Early); KKL 1, Carrington and Winterstein (Mid -season); Rome Beauty and Parlin’s Beauty (late)
+           <br>
+        </p>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">LAND PREPARATION</div>
+        <p class="generalpara">
+            For establishment of a new apple orchard, proper layout of the proposed area is very essential.
+            Planting is usually done in the months of January and February.
+            Pits measuring 60 cm are dug two weeks before planting. The pits are filled with good loamy soil and organic matter. Planting is done in the center of the pit by scooping the soil and placing the soil ball keeping the roots intact. Loose soil is filled up in the remaining area and lightly pressed to remove air gaps. The seedlings are staked and watered immediately.</p>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">SOWING</div>
+        <p class="generalpara">
+            The average number of plants in an area of one ha. can range between 200 to 1250. Four different categories of planting density are followed viz. low (less than 250 plants/ha.), moderate (250-500 plants/ha.), high (500-1250 plants/ha.) and ultra high density (more than 1250 plants /ha.). The combination of rootstock and scion variety determines the plant spacing and planting density/unit area.</p>
+      </div>
+      <div class="generalinfo">
+        <div class="heading">WEED CONTROL</div>
+        <p class="generalpara">Farmyard manure @ 10 kg./ year age of tree is applied along with other fertilizers. The fertilizer dose depends upon the fertility of soil and amount of organic manure applied to the crop. Generally, application of 350 g N, 175 g P2O5 and 350 g K2O per plant per year in split doses is recommended for fully-grown bearing trees. On some trees deficiency of zinc, boron, manganese and calcium may be observed which is corrected with the application of appropriate chemicals through foliage spray.</p>
+        </p>
+      </div>
+
+      <div class="generalinfo">
+        <div class="heading">IRRIGATION</div>
+        <p class="generalpara">Apple trees are particularly sensitive to low soil moisture. Water stress during the growing season reduces the number and size of fruits, and increases June drop. Success of apple largely depends on uniform distribution of rain during the year in case of dry spells during the critical periods supplementary irrigation should be provided. Water stress conditions result in poor fruit set, heavy fruit drop, low production and poor quality. The most critical periods of water requirement are April- August and peak water requirement is after the fruit set. Normally the orchards are irrigated immediately after manuring in the month of December-January. During the summer periods, the crop is irrigated at an interval of 7-10 days. After the fruit setting stage the crop is irrigated at weekly intervals. Application of water during the fortnight preceding harvest markedly improves the fruit color. Thereafter till the onset of dormancy, irrigation is given at an interval of 3-4 weeks.</p>
+      </div>
+  </section>
+
+  {% include 'template2.html' %}
+</body>
+
+</html>

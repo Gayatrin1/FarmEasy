@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Crop Prices</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="..\static\css\style.css">
+<style type="text/css">
+		
+	    body
+	    {
+	    	/* background: url("https://c.pxhere.com/photos/60/61/dew_field_grass_green_HD_wallpaper_lawn-974051.jpg!d");*/
+	    background: url("https://www.maxpixel.net/static/photo/1x/Dew-Grass-Lawn-Hd-Wallpaper-Green-Field-1867519.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+	    font-family: bitter, serif;
+	    height: 100vh;
+	    }
+	    .ele
+	    {
+	      
+	      display: inline-flex;
+	      margin-top: 2rem;
+
+	    }
+		  
+		.x {
+  			text-align: center;
+  			margin-top: 1rem;
+           }
+        .comm
+        {
+        	display: inline-flex;
+
+        }
+
+        .comm label
+        {
+        	padding-left:1rem;
+        	padding-right:0.5rem;
+        	padding-top: 0.25rem;
+        }
+        table, td, th {  
+  		border: 1px solid #ddd;
+  		text-align: left;
+		}
+
+		table {
+  		border-collapse: collapse;
+  		/*width: 100%;*/
+		}
+
+		th, td {
+  		padding: 15px;
+		}
+		.center {
+		margin-left: auto;
+  		margin-right: auto;
+      background-color: white;
+        }
+        .adjust
+        {
+          margin-top:3%;
+        }
+
+</style>
+</head>
+<body>
+{% include 'template.html' %}
+
+<h1 class="skimsheading" style="font-family:'Segoe UI';">Crop Prices</h1>
+<div class="container ele" style="padding-left:6%">
+<div class="comm">
+<label for="ddlCommodity" class="lab">Crop</label>
+<select class="form-select st" id="ddlCommodity" aria-label="Default select example">
+  <option value="0">--Select--</option>
+<option value="Alasande Gram">Alasande Gram</option>
+<option value="Amaranthus"> Amaranthus</option>
+<option value="Amla(Nelli Kai)"> Amla(Nelli Kai)</option>
+<option value="Amphophalus"> Amphophalus</option>
+<option value="Apple"> Apple</option>
+<option value="Arecanut(Betelnut/Supari)"> Arecanut(Betelnut/Supari)</option>
+<option value="Arhar (Tur/Red Gram)(Whole)"> Arhar (Tur/Red Gram)(Whole)</option>
+<option value="Arhar Dal(Tur Dal)"> Arhar Dal(Tur Dal)</option>
+<option value="Ashgourd"> Ashgourd</option>
+<option value="Bajra(Pearl Millet/Cumbu)"> Bajra(Pearl Millet/Cumbu)</option>
+<option value="Banana"> Banana</option>
+<option value="Banana - Green"> Banana - Green</option>
+<option value="Barley (Jau)"> Barley (Jau)</option>
+<option value="Beans"> Beans</option>
+<option value="Beetroot"> Beetroot</option>
+<option value="Bengal Gram Dal"> Bengal Gram Dal (Chana Dal)</option>
+<option value="Bengal Gram(Gram)(Whole)"> Bengal Gram(Gram)(Whole)</option>
+<option value="Ber(Zizyphus/Borehannu)"> Ber(Zizyphus/Borehannu)</option>
+<option value="Bhindi(Ladies Finger)"> Bhindi(Ladies Finger)</option>
+<option value="Bitter gourd"> Bitter gourd</option>
+<option value="Black Gram (Urd Beans)(Whole)"> Black Gram (Urd Beans)(Whole)</option>
+<option value="Black Gram Dal (Urd Dal)"> Black Gram Dal (Urd Dal)</option>
+<option value="Black pepper"> Black pepper</option>
+<option value="Bottle gourd"> Bottle gourd</option>
+<option value="Brinjal"> Brinjal</option>
+<option value="Cabbage"> Cabbage</option>
+<option value="Capsicum"> Capsicum</option>
+<option value="Cardamoms"> Cardamoms</option>
+<option value="Carrot"> Carrot</option>
+<option value="Cashewnuts"> Cashewnuts</option>
+<option value="Castor Seed"> Castor Seed</option>
+<option value="Cauliflower"> Cauliflower</option>
+<option value="Chikoos(Sapota)"> Chikoos(Sapota)</option>
+<option value="Chilly Capsicum"> Chilly Capsicum</option>
+<option value="Cloves"> Cloves</option>
+<option value="Cluster beans"> Cluster beans</option>
+<option value="Coconut"> Coconut</option>
+<option value="Coconut Oil"> Coconut Oil</option>
+<option value="Coconut Seed"> Coconut Seed</option>
+<option value="Coffee"> Coffee</option>
+<option value="Colacasia"> Colacasia</option>
+<option value="Copra"> Copra</option>
+<option value="Coriander(Leaves)"> Coriander(Leaves)</option>
+<option value="Corriander seed"> Corriander seed</option>
+<option value="Cotton"> Cotton</option>
+<option value="Cowpea(Veg)"> Cowpea(Veg)</option>
+<option value="Cucumbar(Kheera)"> Cucumbar(Kheera)</option>
+<option value="Cummin Seed(Jeera)"> Cummin Seed(Jeera)</option>
+<option value="Drumstick"> Drumstick</option>
+<option value="Dry Chillies"> Dry Chillies</option>
+<option value="Duck"> Duck</option>
+<option value="Duster Beans"> Duster Beans</option>
+<option value="Elephant Yam (Suran)"> Elephant Yam (Suran)</option>
+<option value="Field Pea"> Field Pea</option>
+<option value="Fish"> Fish</option>
+<option value="French Beans (Frasbean)"> French Beans (Frasbean)</option>
+<option value="Garlic"> Garlic</option>
+<option value="Ghee"> Ghee</option>
+<option value="Gingelly Oil"> Gingelly Oil</option>
+<option value="Ginger(Dry)"> Ginger(Dry)</option>
+<option value="Ginger(Green)"> Ginger(Green)</option>
+<option value="Goat"> Goat</option>
+<option value="Grapes"> Grapes</option>
+<option value="Green Avare (W)"> Green Avare (W)</option>
+<option value="Green Chilli"> Green Chilli</option>
+<option value="Green Gram (Moong)(Whole)"> Green Gram (Moong)(Whole)</option>
+<option value="Green Gram Dal (Moong Dal)"> Green Gram Dal (Moong Dal)</option>
+<option value="Green Peas"> Green Peas</option>
+<option value="Ground Nut Seed"> Ground Nut Seed</option>
+<option value="Groundnut"> Groundnut</option>
+<option value="Guar"> Guar</option>
+<option value="Guar Seed(Cluster Beans Seed)"> Guar Seed(Cluster Beans Seed)</option>
+<option value="Guava"> Guava</option>
+<option value="Gur(Jaggery)"> Gur(Jaggery)</option>
+<option value="Hen"> Hen</option>
+<option value="Indian Beans (Seam)"> Indian Beans (Seam)</option>
+<option value="Indian Colza(Sarson)"> Indian Colza(Sarson)</option>
+<option value="Isabgul (Psyllium)"> Isabgul (Psyllium)</option>
+<option value="Jowar(Sorghum)"> Jowar(Sorghum)</option>
+<option value="Jute"> Jute</option>
+<option value="Kabuli Chana(Chickpeas-White)"> Kabuli Chana(Chickpeas-White)</option>
+<option value="Kinnow"> Kinnow</option>
+<option value="Knool Khol"> Knool Khol</option>
+<option value="Kodo Millet(Varagu)"> Kodo Millet(Varagu)</option>
+<option value="Leafy Vegetable"> Leafy Vegetable</option>
+<option value="Lemon"> Lemon</option>
+<option value="Lentil (Masur)(Whole)"> Lentil (Masur)(Whole)</option>
+<option value="Lime"> Lime</option>
+<option value="Linseed"> Linseed</option>
+<option value="Little gourd (Kundru)"> Little gourd (Kundru)</option>
+<option value="Long Melon(Kakri)"> Long Melon(Kakri)</option>
+<option value="Mahua Seed(Hippe seed)"> Mahua Seed(Hippe seed)</option>
+<option value="Maize"> Maize</option>
+<option value="Mango"> Mango</option>
+<option value="Mango (Raw-Ripe)"> Mango (Raw-Ripe)</option>
+<option value="Mashrooms"> Mashrooms</option>
+<option value="Masur Dal"> Masur Dal</option>
+<option value="Methi Seeds"> Methi Seeds</option>
+<option value="Methi(Leaves)"> Methi(Leaves)</option>
+<option value="Mint(Pudina)"> Mint(Pudina)</option>
+<option value="Mousambi(Sweet Lime)"> Mousambi(Sweet Lime)</option>
+<option value="Mustard"> Mustard</option>
+<option value="Mustard Oil"> Mustard Oil</option>
+<option value="Nutmeg"> Nutmeg</option>
+<option value="Onion"> Onion</option>
+<option value="Onion Green"> Onion Green</option>
+<option value="Orange"> Orange</option>
+<option value="Paddy(Dhan)(Basmati)"> Paddy(Dhan)(Basmati)</option>
+<option value="Paddy(Dhan)(Common)"> Paddy(Dhan)(Common)</option>
+<option value="Papaya"> Papaya</option>
+<option value="Papaya (Raw)"> Papaya (Raw)</option>
+<option value="Peas Wet"> Peas Wet</option>
+<option value="Peas cod"> Peas cod</option>
+<option value="Peas(Dry)"> Peas(Dry)</option>
+<option value="Pegeon Pea (Arhar Fali)"> Pegeon Pea (Arhar Fali)</option>
+<option value="Pepper ungarbled"> Pepper ungarbled</option>
+<option value="Pigs"> Pigs</option>
+<option value="Pineapple"> Pineapple</option>
+<option value="Pointed gourd (Parval)"> Pointed gourd (Parval)</option>
+<option value="Pomegranate"> Pomegranate</option>
+<option value="Potato"> Potato</option>
+<option value="Pumpkin"> Pumpkin</option>
+<option value="Raddish"> Raddish</option>
+<option value="Ragi (Finger Millet)"> Ragi (Finger Millet)</option>
+<option value="Rat Tail Radish (Mogari)"> Rat Tail Radish (Mogari)</option>
+<option value="Rice"> Rice</option>
+<option value="Ridge gourd(Tori)"> Ridge gourd(Tori)</option>
+<option value="Rubber"> Rubber</option>
+<option value="Seemebadnekai"> Seemebadnekai</option>
+<option value="Sesamum(Sesame,Gingelly,Til)"> Sesamum(Sesame,Gingelly,Til)</option>
+<option value="Snake gourd"> Snake gourd</option>
+<option value="Soyabean"> Soyabean</option>
+<option value="Spinach"> Spinach</option>
+<option value="Sponge gourd"> Sponge gourd</option>
+<option value="Squash(Chappal Kadoo)"> Squash(Chappal Kadoo)</option>
+<option value="Sugar"> Sugar</option>
+<option value="Surat Beans (Papadi)"> Surat Beans (Papadi)</option>
+<option value="Sweet Potato"> Sweet Potato</option>
+<option value="Sweet Pumpkin"> Sweet Pumpkin</option>
+<option value="T.V. Cumbu"> T.V. Cumbu</option>
+<option value="Tamarind Fruit"> Tamarind Fruit</option>
+<option value="Tapioca"> Tapioca</option>
+<option value="Taramira"> Taramira</option>
+<option value="Thogrikai"> Thogrikai</option>
+<option value="Tinda"> Tinda</option>
+<option value="Tomato"> Tomato</option>
+<option value="Turmeric"> Turmeric</option>
+<option value="Turmeric (raw)"> Turmeric (raw)</option>
+<option value="Turnip"> Turnip</option>
+<option value="Water Melon"> Water Melon</option>
+<option value="Wheat"> Wheat</option>
+<option value="White Peas"> White Peas</option>
+<option value="Yam (Ratalu)"> Yam (Ratalu)</option>
+
+</select>
+</div>
+<div class="comm">
+<label for="ddlVariety" class="lab">Variety</label>
+<select class="form-select st" id="ddlVariety" aria-label="Default select example">
+  <option selected value="0">--Select--</option>
+  <option value="(Red Nanital)">(Red Nanital)</option>
+<option value="1001"> 1001</option>
+<option value="1121"> 1121</option>
+<option value="147 Average"> 147 Average</option>
+<option value="1st Sort"> 1st Sort</option>
+<option value="ADT 37"> ADT 37</option>
+<option value="African Sarson"> African Sarson</option>
+<option value="Alasande Gram"> Alasande Gram</option>
+<option value="Amaranthus"> Amaranthus</option>
+<option value="American"> American</option>
+<option value="Amla"> Amla</option>
+<option value="Amphophalus"> Amphophalus</option>
+<option value="Amruthapani"> Amruthapani</option>
+<option value="Annabesahai"> Annabesahai</option>
+<option value="Apple"> Apple</option>
+<option value="Arhar (Whole)"> Arhar (Whole)</option>
+<option value="Arhar Dal"> Arhar Dal(Tur)</option>
+<option value="Arkasheela Mattigulla"> Arkasheela Mattigulla</option>
+<option value="Ashgourd"> Ashgourd</option>
+<option value="Average"> Average</option>
+<option value="Average (Whole)"> Average (Whole)</option>
+<option value="B P T"> B P T</option>
+<option value="Badshah"> Badshah</option>
+<option value="Banana - Green"> Banana - Green</option>
+<option value="Banana - Ripe"> Banana - Ripe</option>
+<option value="Basmati 1509"> Basmati 1509</option>
+<option value="Basumathi"> Basumathi</option>
+<option value="Bata Putti"> Bata Putti</option>
+<option value="Beans (Whole)"> Beans (Whole)</option>
+<option value="Beetroot"> Beetroot</option>
+<option value="Bengal Gram Dal"> Bengal Gram Dal</option>
+<option value="Ber(Zizyphus)"> Ber(Zizyphus)</option>
+<option value="Bhindi"> Bhindi</option>
+<option value="Bhushavali(Pacha)"> Bhushavali(Pacha)</option>
+<option value="Big"> Big</option>
+<option value="Big 100 Kg"> Big 100 Kg</option>
+<option value="Bitter Gourd"> Bitter Gourd</option>
+<option value="Black"> Black</option>
+<option value="Black Dom"> Black Dom</option>
+<option value="Black Gram (Whole)"> Black Gram (Whole)</option>
+<option value="Black Gram Dal"> Black Gram Dal</option>
+<option value="Blue Dom"> Blue Dom</option>
+<option value="Boiler/Firm(White)"> Boiler/Firm(White)</option>
+<option value="Bold"> Bold</option>
+<option value="Bottle Gourd"> Bottle Gourd</option>
+<option value="Bramha"> Bramha</option>
+<option value="Brinjal"> Brinjal</option>
+<option value="Bulb"> Bulb</option>
+<option value="Cabbage"> Cabbage</option>
+<option value="Capsicum"> Capsicum</option>
+<option value="Carrot"> Carrot</option>
+<option value="Caster"> Caster</option>
+<option value="Castor seed"> Castor seed</option>
+<option value="Cauliflower"> Cauliflower</option>
+<option value="Chakkarakeli(Red)"> Chakkarakeli(Red)</option>
+<option value="Chakkarakeli(White)"> Chakkarakeli(White)</option>
+<option value="Chandermukhi"> Chandermukhi</option>
+<option value="Chilly Capsicum"> Chilly Capsicum</option>
+<option value="Chilwa"> Chilwa</option>
+<option value="Chini"> Chini</option>
+<option value="Chips"> Chips</option>
+<option value="Cluster Beans"> Cluster Beans</option>
+<option value="Coarse"> Coarse</option>
+<option value="Coconut"> Coconut</option>
+<option value="Colacasia"> Colacasia</option>
+<option value="Common"> Common</option>
+<option value="Copra"> Copra</option>
+<option value="Copra Oil"> Copra Oil</option>
+<option value="Coriander"> Coriander</option>
+<option value="Coriander Seed"> Coriander Seed</option>
+<option value="Cotton (Unginned)"> Cotton (Unginned)</option>
+<option value="Cowpea (Veg)"> Cowpea (Veg)</option>
+<option value="Cucumbar"> Cucumbar</option>
+<option value="Cummin Seed(Jeera)"> Cummin Seed(Jeera)</option>
+<option value="DMV-7"> DMV-7</option>
+<option value="Dara"> Dara</option>
+<option value="Dara Mill Quality"> Dara Mill Quality</option>
+<option value="Darjeeling"> Darjeeling</option>
+<option value="Delicious"> Delicious</option>
+<option value="Deshi"> Deshi</option>
+<option value="Deshi Red"> Deshi Red</option>
+<option value="Desi"> Desi</option>
+<option value="Desi (Whole)"> Desi (Whole)</option>
+<option value="Drumstick"> Drumstick</option>
+<option value="Dry"> Dry</option>
+<option value="Elephant Yam (Suran)"> Elephant Yam (Suran)</option>
+<option value="F.A.Q."> F.A.Q.</option>
+<option value="Feeds (Poultry Quality)"> Feeds (Poultry Quality)</option>
+<option value="Field Pea"> Field Pea</option>
+<option value="Fine"> Fine</option>
+<option value="Fine(Basmati)"> Fine(Basmati)</option>
+<option value="Finger"> Finger</option>
+<option value="French Beans"> French Beans (Frasbean)</option>
+<option value="Gajjar"> Gajjar</option>
+<option value="Garbled"> Garbled</option>
+<option value="Garlic"> Garlic</option>
+<option value="Gejje"> Gejje</option>
+<option value="Gemin Peas Dal"> Gemin Peas Dal</option>
+<option value="Ghee"> Ghee</option>
+<option value="Goat"> Goat</option>
+<option value="Golden"> Golden</option>
+<option value="Green"> Green</option>
+<option value="Green (Whole)"> Green (Whole)</option>
+<option value="Green Avare (W)"> Green Avare (W)</option>
+<option value="Green Chilly"> Green Chilly</option>
+<option value="Green Ginger"> Green Ginger</option>
+<option value="Green Gram Dal"> Green Gram Dal</option>
+<option value="Green Peas"> Green Peas</option>
+<option value="Ground Nut Seed"> Ground Nut Seed</option>
+<option value="Guava"> Guava</option>
+<option value="Gwar"> Gwar</option>
+<option value="Halwa"> Halwa</option>
+<option value="Hilsa"> Hilsa</option>
+<option value="Hybrid"> Hybrid</option>
+<option value="Hybrid Yellow (Cattle Feed)"> Hybrid Yellow (Cattle Feed)</option>
+<option value="I.R. 36"> I.R. 36</option>
+<option value="I.R. 64"> I.R. 64</option>
+<option value="I.R.-64"> I.R.-64</option>
+<option value="III"> III</option>
+<option value="IR-8"> IR-8</option>
+<option value="Indian Beans (Seam)"> Indian Beans (Seam)</option>
+<option value="Indian Colza(Sarson)"> Indian Colza(Sarson)</option>
+<option value="Jowar ( White)"> Jowar ( White)</option>
+<option value="Jowar (Yellow)"> Jowar (Yellow)</option>
+<option value="Jyoti"> Jyoti</option>
+<option value="Kabuli Chana(Chickpeas-white)"> Kabuli Chana(Chickpeas-white)</option>
+<option value="Kala Masoor New"> Kala Masoor New</option>
+<option value="Kasmir/Shimla - II"> Kasmir/Shimla - II</option>
+<option value="Katla (Small)"> Katla (Small)</option>
+<option value="Katla(Big)"> Katla(Big)</option>
+<option value="Khandsari"> Khandsari</option>
+<option value="Kinnow"> Kinnow</option>
+<option value="Knool Khol"> Knool Khol</option>
+<option value="Kufri Megha"> Kufri Megha</option>
+<option value="Laha(Sarsib)"> Laha(Sarsib)</option>
+<option value="Leafy Vegetables"> Leafy Vegetables</option>
+<option value="Lemon"> Lemon</option>
+<option value="Lime"> Lime</option>
+<option value="Linseed"> Linseed</option>
+<option value="Local"> Local</option>
+<option value="Local (Whole)"> Local (Whole)</option>
+<option value="Lohi Black"> Lohi Black</option>
+<option value="Lokwan"> Lokwan</option>
+<option value="MCU 5"> MCU 5</option>
+<option value="MTU-1010"> MTU-1010</option>
+<option value="Malli(Big)"> Malli(Big)</option>
+<option value="Malli(Small)"> Malli(Small)</option>
+<option value="Mango - Raw-Ripe"> Mango - Raw-Ripe</option>
+<option value="Mashrooms"> Mashrooms</option>
+<option value="Masoor Gola"> Masoor Gola</option>
+<option value="Masur Dal"> Masur Dal</option>
+<option value="Mataa Parboiled"> Mataa Parboiled</option>
+<option value="Medium"> Medium</option>
+<option value="Methi"> Methi</option>
+<option value="Methiseeds"> Methiseeds</option>
+<option value="Mill Quality"> Mill Quality</option>
+<option value="Mint(Pudina)"> Mint(Pudina)</option>
+<option value="Mousambi"> Mousambi</option>
+<option value="Mustard"> Mustard</option>
+<option value="Mustard Oil"> Mustard Oil</option>
+<option value="Narma BT Cotton"> Narma BT Cotton</option>
+<option value="Nasik"> Nasik</option>
+<option value="Nendra Bale"> Nendra Bale</option>
+<option value="Onion"> Onion</option>
+<option value="Onion Green"> Onion Green</option>
+<option value="Other"> Other</option>
+<option value="Paddy"> Paddy</option>
+<option value="Paddy Coarse"> Paddy Coarse</option>
+<option value="Palayamthodan"> Palayamthodan</option>
+<option value="Pangass"> Pangass</option>
+<option value="Papaya"> Papaya</option>
+<option value="Pathari"> Pathari</option>
+<option value="Peas Wet"> Peas Wet</option>
+<option value="Peas cod"> Peas cod</option>
+<option value="Peas(Dry)"> Peas(Dry)</option>
+<option value="Pine Apple"> Pine Apple</option>
+<option value="Pomogranate"> Pomogranate</option>
+<option value="Poovan"> Poovan</option>
+<option value="Potato"> Potato</option>
+<option value="Pumpkin"> Pumpkin</option>
+<option value="Pusakesar"> Pusakesar</option>
+<option value="RCH-2"> RCH-2</option>
+<option value="RSS-4"> RSS-4</option>
+<option value="Raddish"> Raddish</option>
+<option value="Rahu(Andhra)"> Rahu(Andhra)</option>
+<option value="Rahu(Local)"> Rahu(Local)</option>
+<option value="Rasakathai"> Rasakathai</option>
+<option value="Rashi"> Rashi</option>
+<option value="Rat Tail Radish (Mogari)"> Rat Tail Radish (Mogari)</option>
+<option value="Red"> Red</option>
+<option value="Red Banana"> Red Banana</option>
+<option value="Ridgeguard(Tori)"> Ridgeguard(Tori)</option>
+<option value="Robusta"> Robusta</option>
+<option value="Round"> Round</option>
+<option value="Round/Long"> Round/Long</option>
+<option value="Samba Masuri"> Samba Masuri</option>
+<option value="Sarson(Black)"> Sarson(Black)</option>
+<option value="Sarvati"> Sarvati</option>
+<option value="Seemebadanekai"> Seemebadanekai</option>
+<option value="Shanker 6 (B) 30mm FIne"> Shanker 6 (B) 30mm FIne</option>
+<option value="Sharbati"> Sharbati</option>
+<option value="Simla"> Simla</option>
+<option value="Singhra(Big)"> Singhra(Big)</option>
+<option value="Singhra(Small)"> Singhra(Small)</option>
+<option value="Small"> Small</option>
+<option value="Small (Split)"> Small (Split)</option>
+<option value="Snakeguard"> Snakeguard</option>
+<option value="Sol"> Sol</option>
+<option value="Soli"> Soli</option>
+<option value="Sona"> Sona</option>
+<option value="Sona Mahsuri"> Sona Mahsuri</option>
+<option value="Sonalika"> Sonalika</option>
+<option value="Soyabeen"> Soyabeen</option>
+<option value="Spinach"> Spinach</option>
+<option value="Sponge gourd"> Sponge gourd</option>
+<option value="Sugandha"> Sugandha</option>
+<option value="Supari"> Supari</option>
+<option value="Super Fine"> Super Fine</option>
+<option value="Surmai(Big)"> Surmai(Big)</option>
+<option value="Surmali(Small)"> Surmali(Small)</option>
+<option value="Swarna Masuri (New)"> Swarna Masuri (New)</option>
+<option value="Sweet Potato"> Sweet Potato</option>
+<option value="Sweet Pumpkin"> Sweet Pumpkin</option>
+<option value="TD-5"> TD-5</option>
+<option value="Tapioca"> Tapioca</option>
+<option value="Thogarikai"> Thogarikai</option>
+<option value="Tomato"> Tomato</option>
+<option value="Turnip"> Turnip</option>
+<option value="Ungrabled"> Ungrabled</option>
+<option value="Water Melon"> Water Melon</option>
+<option value="White"> White</option>
+<option value="White Dom"> White Dom</option>
+<option value="White Peas"> White Peas</option>
+<option value="Yellow"> Yellow</option>
+<option value="Zinga(Zambo-A)"> Zinga(Zambo-A)</option>
+<option value="Zinga(Zambo-B)"> Zinga(Zambo-B)</option>
+<option value="Zinga(Zambo-C)"> Zinga(Zambo-C)</option>
+<option value="other"> other</option>
+</select>
+<label for="ddlDistrict" class="lab">District</label>
+<select class="form-select st" id="ddlDistrict" aria-label="Default select example">
+ <option selected value="0">--Select--</option>
+  <option value="Adilabad">Adilabad</option>
+<option value="Agra"> Agra</option>
+<option value="Ahmednagar"> Ahmednagar</option>
+<option value="Ajmer"> Ajmer</option>
+<option value="Akola"> Akola</option>
+<option value="Alappuzha"> Alappuzha</option>
+<option value="Aligarh"> Aligarh</option>
+<option value="Allahabad"> Allahabad</option>
+<option value="Ambala"> Ambala</option>
+<option value="Ambedkarnagar"> Ambedkarnagar</option>
+<option value="Amreli"> Amreli</option>
+<option value="Amritsar"> Amritsar</option>
+<option value="Araria"> Araria</option>
+<option value="Badaun"> Badaun</option>
+<option value="Baghpat"> Baghpat</option>
+<option value="Bahraich"> Bahraich</option>
+<option value="Bangalore"> Bangalore</option>
+<option value="Bankura"> Bankura</option>
+<option value="Barabanki"> Barabanki</option>
+<option value="Bareilly"> Bareilly</option>
+<option value="Barmer"> Barmer</option>
+<option value="Bhabhua"> Bhabhua</option>
+<option value="Bharuch"> Bharuch</option>
+<option value="Bhatinda"> Bhatinda</option>
+<option value="Bijapur"> Bijapur</option>
+<option value="Bijnor"> Bijnor</option>
+<option value="Bolangir"> Bolangir</option>
+<option value="Bulandshahar"> Bulandshahar</option>
+<option value="Buxar"> Buxar</option>
+<option value="Chamba"> Chamba</option>
+<option value="Chandrapur"> Chandrapur</option>
+<option value="Chitrakut"> Chitrakut</option>
+<option value="Chittor"> Chittor</option>
+<option value="Chittorgarh"> Chittorgarh</option>
+<option value="Coimbatore"> Coimbatore</option>
+<option value="Dausa"> Dausa</option>
+<option value="Davangere"> Davangere</option>
+<option value="Delhi"> Delhi</option>
+<option value="Deoria"> Deoria</option>
+<option value="Dewas"> Dewas</option>
+<option value="Dhalai"> Dhalai</option>
+<option value="Dhamtari"> Dhamtari</option>
+<option value="Dhenkanal"> Dhenkanal</option>
+<option value="Dindigul"> Dindigul</option>
+<option value="East Champaran"> East Champaran</option>
+<option value="East Godavari"> East Godavari</option>
+<option value="Ernakulam"> Ernakulam</option>
+<option value="Erode"> Erode</option>
+<option value="Etah"> Etah</option>
+<option value="Fatehpur"> Fatehpur</option>
+<option value="Fazilka"> Fazilka</option>
+<option value="Firozabad"> Firozabad</option>
+<option value="Gajapati"> Gajapati</option>
+<option value="Gandhinagar"> Gandhinagar</option>
+<option value="Gautam Budh Nagar"> Gautam Budh Nagar</option>
+<option value="Ghaziabad"> Ghaziabad</option>
+<option value="Ghazipur"> Ghazipur</option>
+<option value="Gonda"> Gonda</option>
+<option value="Gorakhpur"> Gorakhpur</option>
+<option value="Guntur"> Guntur</option>
+<option value="Gurdaspur"> Gurdaspur</option>
+<option value="Gurgaon"> Gurgaon</option>
+<option value="Hanumangarh"> Hanumangarh</option>
+<option value="Hassan"> Hassan</option>
+<option value="Hathras"> Hathras</option>
+<option value="Hoshiarpur"> Hoshiarpur</option>
+<option value="Idukki"> Idukki</option>
+<option value="Indore"> Indore</option>
+<option value="Jagityal"> Jagityal</option>
+<option value="Jalandhar"> Jalandhar</option>
+<option value="Jalaun (Orai)"> Jalaun (Orai)</option>
+<option value="Jalgaon"> Jalgaon</option>
+<option value="Jalore"> Jalore</option>
+<option value="Jalpaiguri"> Jalpaiguri</option>
+<option value="Janjgir"> Janjgir</option>
+<option value="Jaunpur"> Jaunpur</option>
+<option value="Jharsuguda"> Jharsuguda</option>
+<option value="Jodhpur"> Jodhpur</option>
+<option value="Kalahandi"> Kalahandi</option>
+<option value="Kangra"> Kangra</option>
+<option value="Kanker"> Kanker</option>
+<option value="Kannur"> Kannur</option>
+<option value="Kanpur"> Kanpur</option>
+<option value="Karimnagar"> Karimnagar</option>
+<option value="Khammam"> Khammam</option>
+<option value="Khiri (Lakhimpur)"> Khiri (Lakhimpur)</option>
+<option value="Kishanganj"> Kishanganj</option>
+<option value="Kollam"> Kollam</option>
+<option value="Koria"> Koria</option>
+<option value="Kottayam"> Kottayam</option>
+<option value="Kozhikode(Calicut)"> Kozhikode(Calicut)</option>
+<option value="Kullu"> Kullu</option>
+<option value="Kurnool"> Kurnool</option>
+<option value="Kurukshetra"> Kurukshetra</option>
+<option value="Lakhimpur"> Lakhimpur</option>
+<option value="Lalitpur"> Lalitpur</option>
+<option value="Ludhiana"> Ludhiana</option>
+<option value="Maharajganj"> Maharajganj</option>
+<option value="Mahbubnagar"> Mahbubnagar</option>
+<option value="Mahendragarh-Narnaul"> Mahendragarh-Narnaul</option>
+<option value="Mainpuri"> Mainpuri</option>
+<option value="Malappuram"> Malappuram</option>
+<option value="Mathura"> Mathura</option>
+<option value="Medak"> Medak</option>
+<option value="Mewat"> Mewat</option>
+<option value="Mohali"> Mohali</option>
+<option value="Morena"> Morena</option>
+<option value="Mumbai"> Mumbai</option>
+<option value="Muradabad"> Muradabad</option>
+<option value="Muzaffarnagar"> Muzaffarnagar</option>
+<option value="Nalgonda"> Nalgonda</option>
+<option value="Namakkal"> Namakkal</option>
+<option value="Nashik"> Nashik</option>
+<option value="Nawanshahr"> Nawanshahr</option>
+<option value="Nayagarh"> Nayagarh</option>
+<option value="Nizamabad"> Nizamabad</option>
+<option value="North Goa"> North Goa</option>
+<option value="Padrauna(Kusinagar)"> Padrauna(Kusinagar)</option>
+<option value="Palakad"> Palakad</option>
+<option value="Panipat"> Panipat</option>
+<option value="Patan"> Patan</option>
+<option value="Pathanamthitta"> Pathanamthitta</option>
+<option value="Pillibhit"> Pillibhit</option>
+<option value="Prakasam"> Prakasam</option>
+<option value="Pune"> Pune</option>
+<option value="Raebarelli"> Raebarelli</option>
+<option value="Raichur"> Raichur</option>
+<option value="Raigad"> Raigad</option>
+<option value="Rajkot"> Rajkot</option>
+<option value="Rampur"> Rampur</option>
+<option value="Ranga Reddy"> Ranga Reddy</option>
+<option value="Rewari"> Rewari</option>
+<option value="Ropar (Rupnagar)"> Ropar (Rupnagar)</option>
+<option value="Sabarkantha"> Sabarkantha</option>
+<option value="Sagar"> Sagar</option>
+<option value="Saharanpur"> Saharanpur</option>
+<option value="Salem"> Salem</option>
+<option value="Satara"> Satara</option>
+<option value="Shahjahanpur"> Shahjahanpur</option>
+<option value="Siddharth Nagar"> Siddharth Nagar</option>
+<option value="Sirmore"> Sirmore</option>
+<option value="Sirsa"> Sirsa</option>
+<option value="Sitapur"> Sitapur</option>
+<option value="Sounth 24 Parganas"> Sounth 24 Parganas</option>
+<option value="South Andaman"> South Andaman</option>
+<option value="Srinagar"> Srinagar</option>
+<option value="Sundergarh"> Sundergarh</option>
+<option value="Supaul"> Supaul</option>
+<option value="Surat"> Surat</option>
+<option value="Surendranagar"> Surendranagar</option>
+<option value="Thane"> Thane</option>
+<option value="Thanjavur"> Thanjavur</option>
+<option value="Theni"> Theni</option>
+<option value="Thirssur"> Thirssur</option>
+<option value="Thiruvananthapuram"> Thiruvananthapuram</option>
+<option value="Thiruvannamalai"> Thiruvannamalai</option>
+<option value="Unnao"> Unnao</option>
+<option value="Uttar Dinajpur"> Uttar Dinajpur</option>
+<option value="Vidisha"> Vidisha</option>
+<option value="Villupuram"> Villupuram</option>
+<option value="Warangal"> Warangal</option>
+<option value="Wayanad"> Wayanad</option>
+<option value="West Godavari"> West Godavari</option>
+</select>
+</div>
+<div class="comm">
+<label for="ddlState" class="lab">State</label>
+<select class="form-select st" id="ddlState" aria-label="Default select example">
+  <option selected="selected" value="0">--Select--</option>
+  <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+<option value="Andhra Pradesh"> Andhra Pradesh</option>
+<option value="Bihar"> Bihar</option>
+<option value="Chattisgarh"> Chattisgarh</option>
+<option value="Goa"> Goa</option>
+<option value="Gujarat"> Gujarat</option>
+<option value="Haryana"> Haryana</option>
+<option value="Himachal Pradesh"> Himachal Pradesh</option>
+<option value="Jammu and Kashmir"> Jammu and Kashmir</option>
+<option value="Karnataka"> Karnataka</option>
+<option value="Kerala"> Kerala</option>
+<option value="Madhya Pradesh"> Madhya Pradesh</option>
+<option value="Maharashtra"> Maharashtra</option>
+<option value="NCT of Delhi"> NCT of Delhi</option>
+<option value="Odisha"> Odisha</option>
+<option value="Punjab"> Punjab</option>
+<option value="Rajasthan"> Rajasthan</option>
+<option value="Tamil Nadu"> Tamil Nadu</option>
+<option value="Telangana"> Telangana</option>
+<option value="Tripura"> Tripura</option>
+<option value="Uttar Pradesh"> Uttar Pradesh</option>
+<option value="West Bengal"> West Bengal</option>
+</select>
+</div>
+<div class="comm">
+<button type="button" class="btn btn-secondary" onclick="getDailyPrices( )" style="margin-left:0.5rem;">Search</button>
+<a href="http://127.0.0.1:5000/CropPrices/Forecast" class="btn btn-secondary" style="margin-left:0.5rem; width:8rem;">See Forecasts</a>
+</div>
+</div>
+<table class="center adjust">
+	<thead id='add2'>
+		<th>State</th>
+		<th>District</th>
+		<th>Market</th>
+		<th>Commodity</th>
+		<th>Variety</th>
+		<th>Arrival Date</th>
+		<th>Minimum Price</th>
+		<th>Maximum Price</th>
+		<th>Modal Price</th>
+	</thead>
+	<tbody id='add'>
+		<!-- <tr>
+			<td>h</td>
+			<td>e</td>
+			<td>l</td>
+			<td>l</td>
+			<td>o</td>
+			<td>w</td>
+			<td>o</td>
+			<td>r</td>
+			<td>l</td>
+		</tr> -->
+	</tbody>
+</table>
+<script>
+// function getFilter( )
+// {
+//  filterText =""
+//  filterState="filters[state]="+document.getElementById("ddlState").value;
+//  console.log(filterState);
+//  // filterComm="filters[commodity]="+document.getElementById("ddlCommodity").value;
+//  filterComm="filters[commodity]="+document.getElementById("ddlCommodity").value;
+//  if(filterText)
+//  // filterText=filterState+"&"+filterComm;
+//   filterText="&filters[commodity]="+"rice";
+//  console.log(filterText);
+//  getPrices(filterText);
+// }
+var dailyPrices;
+function getPrices( ) 
+{
+   const API_KEY_CROP  = "579b464db66ec23bdd000001cd736d43a1a2479560726cd79b4c9933";
+   let url = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key="+API_KEY_CROP+
+   "&format=json&offset=0&limit=10000";
+   // https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bXXXXXXXXXXXXXXXXX40c1435e88575ea73c1b&format=json&state=Gujarat&offset=0&limit=20&filters[state]=Gujarat&filters[district]=Banaskanth
+   
+   getCropText(url);
+        
+}
+async function getCropText(url)
+{
+   console.log("Hello");
+   let priceObject = await fetch(url);
+   let priceText = await priceObject.text();
+   console.log(priceObject);
+   console.log(priceText);
+   parsePrice(priceText); 
+  
+}
+// function getFilter( )
+// {
+//    c = document.getElementById("ddlCommodity").value;
+//    console.log(c);
+//    s = document.getElementById("ddlState").value;
+//    console.log(s);
+//    let obj = {commodity:String(c), state:String(s), age:50,eyeColor:"blue"};
+//    console.log("helloooo", obj.state);
+//    return obj;
+// }
+
+function parsePrice(priceText)
+{
+  let priceJSON = JSON.parse(priceText);
+  console.log(priceJSON);
+  dailyPrices = priceJSON.records;
+ }
+function dispPrices(arr, i)
+{  
+  
+  	console.log(dailyPrices[i].variety, arr.variety);
+  
+	console.log("Inside c", arr.state, arr.commodity, dailyPrices[i].state, dailyPrices[i].commodity);
+  		console.log(dailyPrices[i].state, dailyPrices[i].district, dailyPrices[i].market, dailyPrices[i].commodity, dailyPrices[i].variety, dailyPrices[i].arrival_date, dailyPrices[i].min_price, dailyPrices[i].max_price, dailyPrices[i].modal_price); 
+  		document.getElementById('add').innerHTML+="<tr><td>"+dailyPrices[i].state+"</td><td>"+dailyPrices[i].district+"</td><td>"+dailyPrices[i].market+"</td><td>"+dailyPrices[i].commodity+"</td><td>"+dailyPrices[i].variety+"</td><td>"+dailyPrices[i].arrival_date+"</td><td>"+dailyPrices[i].min_price+"</td><td>"+dailyPrices[i].max_price+"</td><td>"+dailyPrices[i].modal_price+"</td></tr>";
+   
+}
+function getDailyPrices( )
+{ 
+  // let arr = getFilter( );
+   document.getElementById("add").innerHTML="";
+
+
+   let c = document.getElementById("ddlCommodity").value;
+   console.log(c);
+   let v = document.getElementById("ddlVariety").value;
+   console.log(v);
+   let s = document.getElementById("ddlState").value;
+   let d = document.getElementById("ddlDistrict").value;
+   console.log(s);
+   console.log(d);
+  var arr = {commodity:String(c), variety:String(v), state:String(s), district:String(d) };
+  // console.log(arr.state);
+  if(dailyPrices)
+  {// for(var i=0; i<5; i++)
+    if(arr.state==0 && arr.district==0 && arr.commodity==0 && arr.variety==0)
+  	{ 
+  		document.getElementById('add').innerHTML+='<tr><td colspan="9" style="color:red; text-align=center;"><strong>Please choose an option</strong></td><tr>'
+  	  
+  	} 	
+  	// if(dailyPrices[i].state==arr["state"] && dailyPrices[0].commodity==arr["commodity"])
+  	for(var i=0; i<Object.keys(dailyPrices).length; i++)
+  	{if(dailyPrices[i].state==arr.state && dailyPrices[i].commodity==arr.commodity && dailyPrices[i].variety==arr.variety && dailyPrices[i].district==arr.district)
+  	{
+  		dispPrices(arr, i);
+  	}
+  	else if((dailyPrices[i].state==arr.state && arr.commodity==0 && arr.variety==0 && arr.district==0)||(arr.state==0 && dailyPrices[i].commodity==arr.commodity && arr.variety==0  && arr.district==0)||(arr.state==0 && arr.commodity==0 && dailyPrices[i].variety==arr.variety && arr.district==0)||(arr.state==0 && arr.commodity==0 && arr.variety==0 && dailyPrices[i].district==arr.district))
+  	{
+  		console.log("Hello");
+  		dispPrices(arr, i);
+  	}
+  	else if((dailyPrices[i].state==arr.state && dailyPrices[i].commodity==arr.commodity && arr.variety==0 && arr.district==0)||(arr.state==0 && arr.commodity==0 && dailyPrices[i].variety==arr.variety && dailyPrices[i].district==arr.district)||(dailyPrices[i].state==arr.state && arr.commodity==0 && arr.variety==0 && dailyPrices[i].district==arr.district)||(arr.state==0 && dailyPrices[i].commodity==arr.commodity && dailyPrices[i].variety==arr.variety && arr.district==0)||(arr.state==0 && dailyPrices[i].commodity==arr.commodity && arr.variety==0 && dailyPrices[i].district==arr.district)||(dailyPrices[i].state==arr.state && arr.commodity==0 && dailyPrices[i].variety==arr.variety && arr.district==0))
+  	{
+  		dispPrices(arr, i);
+  	}
+  	else if((dailyPrices[i].state==arr.state && dailyPrices[i].commodity==arr.commodity && dailyPrices[i].variety==arr.variety && arr.district==0)||(dailyPrices[i].state==arr.state && dailyPrices[i].commodity==arr.commodity && arr.variety==0 && dailyPrices[i].district==arr.district)||(dailyPrices[i].state==arr.state && arr.commodity==0 && dailyPrices[i].variety==arr.variety && dailyPrices[i].district==arr.district)||(arr.state==0 && dailyPrices[i].commodity==arr.commodity && dailyPrices[i].variety==arr.variety && dailyPrices[i].district==arr.district))
+  	{
+  		dispPrices(arr, i);
+  	}
+  }}
+  console.log(dailyPrices[0].state);
+  // let dailyPrices = JSON.parse(priceJSON.records);
+  //Limit for rows is 10k. But today only 589?
+  // console.log(priceJSON);
+}
+getPrices( );
+console.log("Hello World");
+</script>
+{% include 'template2.html' %}
+</script>
+</body>
+</html>

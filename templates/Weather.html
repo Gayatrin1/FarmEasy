@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='./css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='./css/font-awesome.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="..\static\css\style2.css">
+</head>
+
+<body>
+  <!-- banner -->
+  {% include 'template.html' %}
+<style>
+  body
+    {background: url("https://c4.wallpaperflare.com/wallpaper/439/352/867/nature-ocean-sea-sky-wallpaper-preview.jpg");
+     background-size: cover;
+    background-repeat: no-repeat;}
+
+	.x {
+  text-align: center;
+  margin: 3rem;
+   background-color: rgb(219, 108, 56);
+    padding: 40px 0px;
+    text-align: center;
+    color:#343a40F5;
+    font-size: 30px;
+}
+}
+.navbar,.dropdown-menu{
+  background-color: #343a40!important;
+}
+ 	.card{
+    padding: 0em .5em 2em;
+    border-radius: 2em;
+    text-align: center;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;=== */
+    margin:1em;
+    }
+   .carde
+   {
+   	width:18rem;
+   	font-family: bitter, serif;
+   	background-color: rgb(214, 214, 205);
+   }
+   .card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+   .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.images
+   {
+   	width:7rem;
+   }
+.carde p
+{
+    margin-bottom: 0.2rem; 
+           
+}
+.carde h3
+{
+   font-size: 1.5rem; 
+           
+}
+.carde
+{
+   display: inline-block; 
+           
+}
+
+</style>
+
+</head>
+<body>
+
+<h1 class='skimsheading'>Weather Forecast</h1>
+<div class="container">
+  <div id ="forecast"></div>
+</div>
+
+<p id="demo"></p>
+<script>
+function gotPosition(pos) 
+{
+    let lat = pos.coords.latitude;
+    let long = pos.coords.longitude;
+    console.log(lat);
+    console.log(long);
+    getForecast(lat, long);
+}
+       
+function getForecast(lat, long) 
+{
+   let url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=current,minutely,hourly&appid=6c94be434f986b412543b262a76f8125";
+   getWeatherText(url);
+        
+}
+async function getWeatherText(url) 
+{
+   let weatherObject = await fetch(url);
+   let weatherText = await weatherObject.text();
+   console.log(weatherObject);
+   console.log(weatherText);
+   parseWeather(weatherText);       
+}        
+function parseWeather (weatherText) 
+{
+   let weatherJSON = JSON.parse(weatherText);
+   console.log(weatherJSON);
+   let dailyForecast = weatherJSON.daily;
+  
+   d = new Date( );
+   for (x = 0; x < dailyForecast.length; x++) 
+   {
+      let day = dailyForecast[x];
+      let today = new Date().getDay() + x;
+      if (today > 6) 
+      {
+        today = today - 7;
+      }
+      let dates = new Date(d);
+      d.setDate(d.getDate( )+1);   
+      console.log(dates);
+      let dayOfWeek = getDayOfWeek(today);
+      let description = day.weather[0].description;
+      let icon = day.weather[0].icon;
+      let sunrise = timestampToTime(day.sunrise);
+      let sunset = timestampToTime(day.sunset);
+      let highTemp = kToC(day.temp.max);
+      let lowTemp = kToC(day.temp.min);
+      let humidity = day.humidity;
+      let windSpeed = day.wind_speed;
+      let windGust = day.wind_gust;
+      displayWeatherDay(dayOfWeek, description, icon, sunrise, sunset, highTemp, lowTemp, humidity, windSpeed, windGust, dates);
+     }
+}
+
+ let displayWeatherDay = function(dayOfWeek, description, icon, sunrise, sunset, highTemp, lowTemp, humidity, windSpeed, windGust, dates) {
+            // dates=new Date(dates);
+            let datess = dates.getDate( )+"/"+(Number(dates.getMonth( ))+1)+"/"+dates.getFullYear().toString().substr(-2);
+            // console.log(datess);
+            let out = "<div class='card carde weatherDay'><img class ='images center' src='http://openweathermap.org/img/wn/" + icon + ".png'/>";
+            out += "<h3>" + datess+ ", "+dayOfWeek +"</h3>";
+            out += "<h3>" + description + "</h3>";
+            out += "<p>Sunrise: " + sunrise + "</p>";
+            out += "<p>Sunset: " + sunset + "</p>";
+            out += "<p>High Temperature: " + highTemp + "\u00B0C</p>";
+            out += "<p>Low Temperature: " + lowTemp + "\u00B0C</p>";
+            out += "<p>Humidity: " + humidity + "%</p>";
+            out += "<p>Wind Speed: " + Math.round(windSpeed) + " with gusts up to " + Math.round(windGust) + "</p></div>";
+            document.getElementById("forecast").innerHTML += out;
+        }
+
+        let getDayOfWeek = function(dayNum) {
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            return (weekday[dayNum]);
+        }
+
+        let kToC = function(kelvinTemp) {
+            const celsius = Math.floor(kelvinTemp - 273);
+            // const fahrenheit = Math.floor(celsius * (9 / 5) + 32);
+            // return fahrenheit
+            return celsius;
+        }
+
+        let timestampToTime = function(timeStamp) {
+            let date = new Date(timeStamp * 1000);
+            let hours = date.getHours();
+            let minutes = "";
+            if (date.getMinutes() < 10) {
+                minutes = "0" + date.getMinutes();
+            } else {
+                minutes = date.getMinutes();
+            }
+            return hours + ":" + minutes;
+        }
+
+        navigator.geolocation.getCurrentPosition(gotPosition);
+
+
+</script>
+{% include 'template2.html' %}
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muskmelon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="..\static\css\style.css">
+</head>
+
+<body>
+    {% include 'template.html' %}
+    <section class="cat">
+        <div class="agriculterdetail">
+            <div class="heading">CROP GUIDE</div>
+            <div class="agricontainer ">
+                <div class="planteimg ">
+                    <img src="..\static\images\Muskmelon.jpg" alt="">
+                </div>
+                <div class="plantdata">
+                    <div class="cropname">muskmelon</div>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\weather (1).png" alt="">
+                            <div class="date">RABI/MID FEBRUARY </div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\seeding.png" alt="">
+                            <div class="date">type of varieties</div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\fertilizepro.png" alt="">
+                            <div class="date">chemical fertilizer</div>
+                        </div>
+                    </a>
+                    <a href="#" class="anchor">
+                        <div class="whether">
+                            <img src="..\static\images\pesticide.png" alt="">
+                            <div class="date">PEST CONTROL</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">GENERAL INFORMATION</div>
+                <p class="generalpara">It is an important vegetable crop of India. These are mother fruits of several
+                    better-known cultivars. Muskmelon is native to Iran, Anatolia and Armenia. Musk melon is a rich
+                    source of Vitamin A and Vitamin C. It contains about 90% of water and 9% Carbohydrates. In India
+                    muskmelon growing states include Punjab, Tamil Nadu, Uttar Pradesh, Maharashtra, and Andhra Pradesh.
+                </p>
+            </div>
+
+            <div class="generalinfo setinfo" style="background: none;">
+                <div class="heading">CLIMATE</div>
+                <div class="carsection">
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+                        <div class="boxconent">TEMPERATURE </div>
+                        <div class="boxconent">18°C-30°C</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\rainy.png" alt="" /></div>
+                        <div class="boxconent">RAINFALL</div>
+                        <div class="boxconent">50cm-75cm
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\chemical-free.png" alt="" /></div>
+                        <div class="boxconent">SOWING TEMPERATURE </div>
+                        <div class="boxconent">25°C-30°C</div>
+                    </div>
+
+                    <div class="box">
+                        <div class="boximg"><img src="..\static\images\high-temperature.png" alt="" /></div>
+                        <div class="boxconent">HARVESTING TEMPERATURE</div>
+                        <div class="boxconent">25°C-30°C</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">SOIL</div>
+                <p class="generalpara">It grows well in deep fertile and well-drained soil. It gives best results when
+                    grown on well drained loam soil. Soil having poor drainage capacity is not suited for Muskmelon
+                    cultivation. Follow crop rotation as continuous growing of the same crop on the same field leads to
+                    loss of nutrients, poor yield and more disease attacks. pH of soil should be in between 6-7.
+                    Alkaline soil with high salt concentration is not suitable for cultivation.
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">POPULAR VARIETIES WITH THEIR YIELD</div>
+                <p class="generalpara"><b>Hara Madhu:</b> Late maturing variety. Fruits are of large size, round shape having
+                    average weight of about one kg. Skin is of light yellow color. TSS contains about 13% and is very
+                    sweet in tests. Flesh is green color, thick and juicy. Seeds are of small size. It is resistant to
+                    powdery mildew. It gives an average yield of 50 qtl/acre.
+                </p>
+                <p class="generalpara">
+                    <b>Punjab Sunehri:</b> Mature 12 days before Hara Madhu. Fruits are of round shape with netted rind and of
+                    light brown color. Its average weight is about 700-800gm, TSS is about 11%. Flesh is thick, orange.
+                    It has good keeping quality. It is resistant to fruit attacks. Its average yield is about
+                    65qtl/acre.
+                </p>
+                <div id="hidcontent">
+                    <p class="generalpara"><b>MH-51:</b> Released in 2017. It gives an average yield of 89qtl/acre. It has
+                        round fruits, has stripes and is gauzed. It contains 12% sucrose content.
+                        <br><br>
+                        <b>MH-27:</b> Released in 2015. It gives an average yield of 88 qtl/acre. It contains 12.5% sucrose
+                        content.
+                        <br><br>
+                        Other state varieties:
+                        <br>
+                        Arka rajhans
+                        MH 10
+                        Pusa madhurima
+                    </p>
+                </div>
+                <div class="btncenter"><button class="generalinfobtn" onclick="myFunction3()">+ Show More</button></div>
+            </div>
+
+
+            <div class="generalinfo">
+                <div class="heading">LAND PREPARATION</div>
+                <p class="generalpara">Plough land and bring to fine tilth. In North India, sowing is done in the middle
+                    of February month. In North east and west India sowing is done during November to January
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">SOWING</div>
+                <p class="generalpara">Time of sowing
+                    Middle of February is the optimum time for muskmelon cultivation.
+
+                    <br><br>
+                    Spacing
+                    Prepare 3-4m wide beds depending upon variety use. Sow two seeds per hill on the bed and keep a
+                    distance of 60cm between the hill.
+                    <br><br>
+                    Method of sowing
+                    For Sowing, dibbling methods and transplanting methods can be used.
+                    <br><br>
+                    Sow seeds in a polythene bag of 15cm x 12cm size with thickness of 100 gauge in the last week of
+                    January or first week of February. Fill a polythene bag with equal proportion of well rotted cow
+                    dung and soil. Seedlings are ready for transplantation by the end of February or first week of
+                    March. Transplantation is done for 25-30 days old seedlings. Apply irrigation immediately after
+                    transplantation.
+                </p>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">SEED</div>
+                <p class="generalpara">Seed Rate
+                    For sowing in one acre land, a seed rate of 400 gm is required.
+                </p>
+                <p class="generalpara" id="morecontent2">Seed Treatment
+                    Before sowing, treat the seed with Carbendazim@2gm/kg of seeds. After chemical treatment, treat the
+                    seeds with Trichoderma viride@4gm per kg of seeds. Dry seeds in shade and then do sowing
+                    immediately.
+                </p>
+                <div class="btncenter"><button class="generalinfobtn" onclick="myFunction2()">+ Show More</button></div>
+            </div>
+
+            <div class="generalinfo">
+                <div class="heading">WEED CONTROL</div>
+                <p class="generalpara">Keep bed weed free during the early stage of growth. In absence of proper control
+                    measures, weed can cause yield loss of 30%. 15-20 days after sowing carry out intercultural
+                    operations. Depending upon severity and intensity of weeds, two to three weeding are required.
+                </p>
+            </div>
+            <div class="generalinfo">
+                <div class="heading">IRRIGATION</div>
+                <p class="generalpara">Apply irrigation, every week in the summer season. At time of maturity give
+                    irrigation only when needed. Avoid over flooding in the muskmelon field. During application of
+                    irrigation, do not wet the vines or vegetative parts, especially during flowering and fruit-set.
+                    Avoid frequent irrigation in heavy soil as it will promote excessive vegetative growth. For better
+                    sweetness and flavor, stop irrigation or reduce watering 3-6 days before harvesting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery library -->
+    <script>
+        function myFunction2() {
+            var x = document.getElementById("morecontent2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function myFunction3() {
+            var x = document.getElementById("hidcontent");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    {% include 'template2.html' %}
+</body>
+
+<!-- <form class="form-inline my-2 my-lg-0" id="vendearch">
+  <div class="content" id="mysearch">
+    <input type="text" class="field" placeholder="Enter Keyword">
+   <a href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+    </div>
+</form> -->
+
+</html>
